@@ -1,0 +1,21 @@
+{
+	"name"	: "euroglas/clientes",
+	"type"	: "library",
+	"description"	: "Modulo de clientes, para EUROGLAS",
+	"keywords"	: ["clientes","rest","euroglas"],
+	"homepage":	"http://euroglas.net",
+	"license":	"agpl-3.0",
+	"authors": [{
+			"name": "Octavio Galindo",
+			"email": "Octavio@euroglas.net",
+			"role": "Developer"
+	}],
+    "require": {
+        "euroglas/dbaccess": "@dev"
+    },
+	"autoload": {
+		"psr-4": {
+			"euroglas\\clientes\\": "src/"
+		}
+	}
+}
