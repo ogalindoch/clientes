@@ -11,8 +11,12 @@
 			"role": "Developer"
 	}],
     "require": {
-        "euroglas/dbaccess": "@dev"
+        "euroglas/dbaccess": "dev-main"
     },
+	"require-dev": {
+		"euroglas/eurorest": "dev-main",
+		"euroglas/authkey" : "dev-main"
+	},
 	"autoload": {
 		"psr-4": {
 			"euroglas\\clientes\\": "src/"
