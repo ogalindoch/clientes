@@ -282,8 +282,15 @@ class clientes implements \euroglas\eurorest\restModuleInterface
 	public function importaClientes() {
 		global $DEBUG;
 
+		if( !empty($_REQUEST['DEBUG']) )
+		{
+			$DEBUG = $_REQUEST['DEBUG'] == true;
+		}
+
 		// Origen
 		$origen = 'SAE'; // Normalmente recibimos cosas desde SAE
+
+		//print_r($_POST);
 
 		if( !empty($_POST['origen']) )
 		{
@@ -318,6 +325,9 @@ class clientes implements \euroglas\eurorest\restModuleInterface
 			//print_r($csv);
 			array_walk($csv, array($this, 'importaClienteSAE'), $dbRingW);
 
+			$numLineas = count($csv);
+
+			print("¡Listo! Se procesaron {$numLineas} clientes");
 		}
 		else if( !empty($_FILES['csvfile']) )
 		{
@@ -366,6 +376,7 @@ class clientes implements \euroglas\eurorest\restModuleInterface
 		//print_r($csv);
 		array_walk($csv, array($this, 'importaClienteSAE'), $dbRingW);
 
+		print("¡Listo! ");
 
 	}
 	private function importaClienteSAE( $datosDelCliente, $key, $db )
